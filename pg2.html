@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Options Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .tab-container {
+            width: 400px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tab-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .tab-header button {
+            border: none;
+            background: none;
+            color: inherit;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tab-content {
+            padding: 20px;
+        }
+
+        .tab-content form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-content input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .tab-content button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tab-container">
+    <div class="tab-header">
+        <button onclick="showTab('option1Tab')">Option 1</button>
+        <button onclick="showTab('option2Tab')">Option 2</button>
+        <button onclick="showTab('option3Tab')">Option 3</button>
+    </div>
+    <div class="tab-content" id="option1Tab" style="display: none;">
+        <p>This is content for Option 1. Replace this with your content.</p>
+        <!-- Add the URL directly in the href attribute -->
+        <a href="https://samgamerhindu.github.io/TC-BANK/">Go to Option 1</a>
+    </div>
+    <div class="tab-content" id="option2Tab" style="display: none;">
+        <p>This is content for Option 2. Replace this with your content.</p>
+        <button onclick="navigateTo('OPTION_2_TARGET_URL')">Go to Option 2</button>
+    </div>
+    <div class="tab-content" id="option3Tab" style="display: none;">
+        <p>This is content for Option 3. Replace this with your content.</p>
+        <button onclick="navigateTo('OPTION_3_TARGET_URL')">Go to Option 3</button>
+    </div>
+</div>
+
+<script>
+    function showTab(tabId) {
+        var tabs = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = 'none';
+        }
+        document.getElementById(tabId).style.display = 'block';
+    }
+
+    function navigateTo(targetUrl) {
+        // Redirect to the specified target URL
+        window.location.href = targetUrl;
+    }
+</script>
+
+</body>
+</html>
+
+
